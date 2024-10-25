@@ -1,11 +1,11 @@
 .main-base-layout {
     display: flex;
-    height: '100vh';
-    margin: '-8px';
+    height: 100vh;
+    margin: -8px;
 }
 
 .main-base-layout-children {
     flex: 1;
-    padding: '20px';
+    padding: 20px;
     overflow-y: auto;
 }

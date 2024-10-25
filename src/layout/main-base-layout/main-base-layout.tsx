@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sidebar } from '@zenra/components';
+import './main-base-layout.css';
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -8,9 +9,9 @@ interface LayoutProps {
 
 const MainBaseLayout: React.FC<LayoutProps> = ({ children, showSidebar = true }) => {
     return (
-        <div className='main-base-layout' style={{ display: 'flex', height: '100vh', margin: '-8px' }}>
+        <div className='main-base-layout'>
             {showSidebar && <Sidebar />}
-            <div style={{ flex: 1, padding: '20px', overflowY: 'auto' }}>
+            <div className='main-base-layout-children'>
                 {children}
             </div>
         </div>

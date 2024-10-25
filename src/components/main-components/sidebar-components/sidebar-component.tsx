@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './sidebar-component.css';
 
 const Sidebar: React.FC = () => {
     return (
-        <div style={{ width: '200px', background: '#333', color: '#fff', padding: '20px' }}>
+        <div className='side-bar-layout' >
             <h2>My App</h2>
             <nav>
                 <ul style={{ listStyle: 'none', padding: 0 }}>
