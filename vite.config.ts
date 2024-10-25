@@ -7,7 +7,8 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@zenra/components': path.resolve(__dirname, 'src/components')
+      '@zenra/components': path.resolve(__dirname, 'src/components'),
+      '@zenra/layouts': path.resolve(__dirname, 'src/layout'),
     }
   }
 });

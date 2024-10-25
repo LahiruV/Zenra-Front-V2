@@ -1,13 +1,12 @@
 import React from 'react';
-import Sidebar from '../components/main-components/sidebar-components/sidebar-component';
-
+import { Sidebar } from '@zenra/components';
 
 interface LayoutProps {
     children: React.ReactNode;
-    showSidebar?: boolean;  // Optional prop to show/hide the sidebar
+    showSidebar?: boolean;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, showSidebar = true }) => {
+const MainBaseLayout: React.FC<LayoutProps> = ({ children, showSidebar = true }) => {
     return (
         <div style={{ display: 'flex', height: '100vh' }}>
             {showSidebar && <Sidebar />}
@@ -18,4 +17,4 @@ const Layout: React.FC<LayoutProps> = ({ children, showSidebar = true }) => {
     );
 };
 
-export default Layout;
+export default MainBaseLayout;
