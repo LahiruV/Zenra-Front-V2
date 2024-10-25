@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sidebar } from '@zenra/components';
+import { Header, Sidebar } from '@zenra/components';
 import './main-base-layout.css';
 
 interface LayoutProps {
@@ -11,8 +11,11 @@ const MainBaseLayout: React.FC<LayoutProps> = ({ children, showSidebar = true })
     return (
         <div className='main-base-layout'>
             {showSidebar && <Sidebar isAuthenticated={true} />}
-            <div className='main-base-layout-children'>
-                {children}
+            <div className='content-area'>
+                <Header />
+                <div className='main-base-layout-children'>
+                    {children}
+                </div>
             </div>
         </div>
     );

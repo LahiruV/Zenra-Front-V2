@@ -1,0 +1,41 @@
+.main-header {
+    height: 68px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-icon {
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+}
+
+.header-language {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.header-avatar {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
