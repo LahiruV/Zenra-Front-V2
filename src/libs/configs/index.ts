@@ -1,0 +1,1 @@
+export { companyName } from './configTitle';

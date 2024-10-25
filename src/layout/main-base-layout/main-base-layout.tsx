@@ -10,7 +10,7 @@ interface LayoutProps {
 const MainBaseLayout: React.FC<LayoutProps> = ({ children, showSidebar = true }) => {
     return (
         <div className='main-base-layout'>
-            {showSidebar && <Sidebar />}
+            {showSidebar && <Sidebar isAuthenticated={true} />}
             <div className='main-base-layout-children'>
                 {children}
             </div>

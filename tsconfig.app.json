@@ -30,7 +30,10 @@
       ],
       "@zenra/layouts": [
         "./src/layout/index.ts"
-      ]
+      ],
+      "@zenra/configs": [
+        "./src/libs/configs/index.ts"
+      ],
     }
   },
   "include": [

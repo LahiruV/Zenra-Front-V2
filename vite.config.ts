@@ -9,6 +9,7 @@ export default defineConfig({
     alias: {
       '@zenra/components': path.resolve(__dirname, 'src/components'),
       '@zenra/layouts': path.resolve(__dirname, 'src/layout'),
+      '@zenra/configs': path.resolve(__dirname, 'src/libs/configs'),
     }
   }
 });

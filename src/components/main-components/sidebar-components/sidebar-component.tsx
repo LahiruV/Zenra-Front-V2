@@ -1,19 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './sidebar-component.css';
-
-const Sidebar: React.FC = () => {
+import { companyName } from '@zenra/configs';
+const Sidebar: React.FC<{ isAuthenticated: boolean }> = ({ isAuthenticated }) => {
     return (
-        <div className='side-bar-layout' >
-            <h2>My App</h2>
+        <div className='side-bar-layout'>
+            <h2>{companyName}</h2>
             <nav>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                    <li style={{ marginBottom: '10px' }}>
-                        <Link to="/" style={{ color: '#fff', textDecoration: 'none' }}>Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/about" style={{ color: '#fff', textDecoration: 'none' }}>About</Link>
-                    </li>
+                <ul>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    {isAuthenticated && (
+                        <>
+                            <li><Link to="/dashboard">Dashboard</Link></li>
+                            <li><Link to="/logout">Logout</Link></li>
+                        </>
+                    )}
+                    {!isAuthenticated && (
+                        <li><Link to="/login">Login</Link></li>
+                    )}
                 </ul>
             </nav>
         </div>

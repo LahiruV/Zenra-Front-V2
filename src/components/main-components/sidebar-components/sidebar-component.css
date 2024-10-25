@@ -3,4 +3,40 @@
     background: #333;
     color: #fff;
     padding: 20px;
+    height: 100vh;
+    /* Full height */
+    position: fixed;
+    /* Fixed Sidebar (stay in place on scroll) */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+}
+
+.side-bar-layout h2 {
+    margin-top: 0px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #fff;
+}
+
+.side-bar-layout ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-bar-layout li {
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: background 0.3s ease;
+}
+
+.side-bar-layout li:hover {
+    background: #555;
+    /* Add a hover effect */
+}
+
+.side-bar-layout a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
 }
