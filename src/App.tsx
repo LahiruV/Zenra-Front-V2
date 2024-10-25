@@ -5,7 +5,8 @@ import '@fontsource/roboto/700.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from './layout/layout';
-import { Home } from '@mui/icons-material';
+import { Home, NewHome } from '@zenra/components';
+
 
 const App: React.FC = () => {
   return (
@@ -24,7 +25,7 @@ const App: React.FC = () => {
         <Route
           path="/home" element={
             <Layout showSidebar={false}>
-              <Home />
+              <NewHome />
             </Layout>
           }
         />
