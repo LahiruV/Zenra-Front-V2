@@ -13,14 +13,14 @@ export interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isAuthenticated }) => {
-    const [selected, setSelected] = useState<string>(''); // Add state for selected item
+    const [selected, setSelected] = useState<string>('');
 
     const logOut = () => {
         console.log('Logging out');
     }
 
     const handleSelect = (item: string) => {
-        setSelected(item); // Update selected item
+        setSelected(item);
     }
 
     return (
@@ -29,7 +29,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isAuthenticated }) => {
             <nav>
                 <ul>
                     <li
-                        className={selected === 'home' ? 'selected' : ''} // Apply 'selected' class conditionally
+                        className={selected === 'home' ? 'selected' : ''}
                         onClick={() => handleSelect('home')}
                     >
                         <Link to="/">
