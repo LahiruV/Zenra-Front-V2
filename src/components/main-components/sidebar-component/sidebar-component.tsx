@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './sidebar-component.css';
 import { companyName } from '@zenra/configs';
@@ -13,49 +13,65 @@ export interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isAuthenticated }) => {
+    const [selected, setSelected] = useState<string>(''); // Add state for selected item
+
     const logOut = () => {
         console.log('Logging out');
     }
+
+    const handleSelect = (item: string) => {
+        setSelected(item); // Update selected item
+    }
+
     return (
         <div className='side-bar-layout'>
             <h2>{companyName}</h2>
             <nav>
                 <ul>
-                    <li>
+                    <li
+                        className={selected === 'home' ? 'selected' : ''} // Apply 'selected' class conditionally
+                        onClick={() => handleSelect('home')}
+                    >
                         <Link to="/">
                             <HomeIcon style={{ marginRight: '10px' }} />
                             Home
                         </Link>
                     </li>
-                    <li>
+                    <li
+                        className={selected === 'about' ? 'selected' : ''}
+                        onClick={() => handleSelect('about')}
+                    >
                         <Link to="/about">
                             <InfoIcon style={{ marginRight: '10px' }} />
                             About
                         </Link>
                     </li>
                     {isAuthenticated && (
-                        <>
-                            <li>
-                                <Link to="/dashboard">
-                                    <DashboardIcon style={{ marginRight: '10px' }} />
-                                    Dashboard
-                                </Link>
-                            </li>
-                        </>
+                        <li
+                            className={selected === 'dashboard' ? 'selected' : ''}
+                            onClick={() => handleSelect('dashboard')}
+                        >
+                            <Link to="/dashboard">
+                                <DashboardIcon style={{ marginRight: '10px' }} />
+                                Dashboard
+                            </Link>
+                        </li>
                     )}
                 </ul>
             </nav>
             <nav className='log-out-button'>
-                {isAuthenticated && (
-                    <li>
-                        <Link onClick={logOut} to="">
+                {isAuthenticated ? (
+                    <li onClick={() => { logOut(); handleSelect('logout'); }} className={selected === 'logout' ? 'selected' : ''}>
+                        <Link to="">
                             <LogoutIcon style={{ marginRight: '10px' }} />
                             Logout
                         </Link>
                     </li>
-                )}
-                {!isAuthenticated && (
-                    <li>
+                ) : (
+                    <li
+                        className={selected === 'login' ? 'selected' : ''}
+                        onClick={() => handleSelect('login')}
+                    >
                         <Link to="/login">
                             <LoginIcon style={{ marginRight: '10px' }} />
                             Login

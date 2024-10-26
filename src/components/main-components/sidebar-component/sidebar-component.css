@@ -53,10 +53,8 @@
     font-size: 1.2rem;
 }
 
-/* Ensure the logout button stays at the bottom */
 .log-out-button {
     margin-top: auto;
-    /* Push the logout button to the bottom */
 }
 
 .log-out-button li {
@@ -72,5 +70,9 @@
 
 .log-out-button li:hover {
     background-color: #de3024da;
-    /* Darker hover effect */
+}
+
+.side-bar-layout .selected {
+    background-color: #4a49e0;
+    font-weight: bold;
 }
