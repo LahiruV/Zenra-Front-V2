@@ -8,7 +8,11 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import LogoutIcon from '@mui/icons-material/Logout';
 import LoginIcon from '@mui/icons-material/Login';
 
-const Sidebar: React.FC<{ isAuthenticated: boolean }> = ({ isAuthenticated }) => {
+export interface SidebarProps {
+    isAuthenticated: boolean
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ isAuthenticated }) => {
     const logOut = () => {
         console.log('Logging out');
     }
@@ -39,14 +43,6 @@ const Sidebar: React.FC<{ isAuthenticated: boolean }> = ({ isAuthenticated }) =>
                             </li>
                         </>
                     )}
-                    {!isAuthenticated && (
-                        <li>
-                            <Link to="/login">
-                                <LoginIcon style={{ marginRight: '10px' }} />
-                                Login
-                            </Link>
-                        </li>
-                    )}
                 </ul>
             </nav>
             <nav className='log-out-button'>
@@ -55,6 +51,14 @@ const Sidebar: React.FC<{ isAuthenticated: boolean }> = ({ isAuthenticated }) =>
                         <Link onClick={logOut} to="">
                             <LogoutIcon style={{ marginRight: '10px' }} />
                             Logout
+                        </Link>
+                    </li>
+                )}
+                {!isAuthenticated && (
+                    <li>
+                        <Link to="/login">
+                            <LoginIcon style={{ marginRight: '10px' }} />
+                            Login
                         </Link>
                     </li>
                 )}

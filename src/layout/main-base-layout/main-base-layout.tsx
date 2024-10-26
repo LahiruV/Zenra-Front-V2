@@ -12,7 +12,7 @@ const MainBaseLayout: React.FC<LayoutProps> = ({ children, showSidebar = true })
         <div className='main-base-layout'>
             {showSidebar && <Sidebar isAuthenticated={true} />}
             <div className='content-area'>
-                <Header />
+                <Header isAuthenticated={true} />
                 <div className='main-base-layout-children'>
                     {children}
                 </div>
