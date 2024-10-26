@@ -3,6 +3,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import PeopleIcon from '@mui/icons-material/People';
 import Avatar from '@mui/material/Avatar';
 import './header-component.css';
+import { ControlledSwitches } from '@zenra/widgets';
 export interface HeaderProps {
     isAuthenticated: boolean
 }
@@ -11,6 +12,7 @@ const Header: React.FC<HeaderProps> = ({ isAuthenticated }) => {
         <header className='main-header'>
             <div className='header-left'>
                 {/* <SearchIcon className="header-icon" /> */}
+                <ControlledSwitches />
             </div>
             {isAuthenticated && (
                 <div className='header-right'>

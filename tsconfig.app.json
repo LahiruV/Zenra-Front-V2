@@ -34,6 +34,9 @@
       "@zenra/configs": [
         "./src/libs/configs/index.ts"
       ],
+      "@zenra/widgets": [
+        "./src/libs/widgets/index.ts"
+      ],
     }
   },
   "include": [

@@ -10,6 +10,7 @@ export default defineConfig({
       '@zenra/components': path.resolve(__dirname, 'src/components'),
       '@zenra/layouts': path.resolve(__dirname, 'src/layout'),
       '@zenra/configs': path.resolve(__dirname, 'src/libs/configs'),
+      '@zenra/widgets': path.resolve(__dirname, 'src/libs/widgets'),
     }
   }
 });
