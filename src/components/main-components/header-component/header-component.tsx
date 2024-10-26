@@ -3,7 +3,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import PeopleIcon from '@mui/icons-material/People';
 import Avatar from '@mui/material/Avatar';
 import './header-component.css';
-import { ControlledSwitches } from '@zenra/widgets';
+import { CustomizedSwitches } from '@zenra/widgets';
 export interface HeaderProps {
     isAuthenticated: boolean
 }
@@ -11,8 +11,7 @@ const Header: React.FC<HeaderProps> = ({ isAuthenticated }) => {
     return <div>
         <header className='main-header'>
             <div className='header-left'>
-                {/* <SearchIcon className="header-icon" /> */}
-                <ControlledSwitches />
+                <CustomizedSwitches isMaterialUISwitch={true} />
             </div>
             {isAuthenticated && (
                 <div className='header-right'>
@@ -20,7 +19,6 @@ const Header: React.FC<HeaderProps> = ({ isAuthenticated }) => {
                     <PeopleIcon className="header-icon" />
                     <div className="header-language">
                         <span>🇬🇧</span>
-                        {/* Add your language switcher here */}
                     </div>
                     <Avatar src="https://i.pravatar.cc/300" alt="User Avatar" className="header-avatar" />
                 </div>
